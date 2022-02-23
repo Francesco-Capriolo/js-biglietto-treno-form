@@ -20,52 +20,97 @@
 
     <link rel="stylesheet" href="css/style.css">
 
-    <title>Ticket train</title>
+    <title>Ticket train form</title>
 </head>
 
 <body>
 
     <main class="vh-100">
         <section class="container-md pt-5">
-            <div class="row h-50 bg-secondary py-5 justify-content-center">
-                <div class="col-2">
-                    <button onclick="myFunction()" type="button" class="btn btn-danger py-2 px-4 rounded-pill">
-                        <h1>Ticket</h1>
-                    </button>
+            <div class="row h-50 py-5 justify-content-center">
+                <h1 class="text-white text-uppercase text-center fw-bold">
+                    calcola il prezzo del tuo biglietto
+                </h1>
+                <div class="col-10 d-flex flex-wrap justify-content-center text-center p-3 mb-5 bg-white fw-bold">
+                    <div class="col-12 col-md">
+                        <h4>
+                            Nome e Cognome
+                        </h4>
+                        <input id="input-name" class="rounded text-center" type="text"
+                            placeholder="inserisci il tuo Nome e Cognome">
+                    </div>
+                    <div class="col-12 col-md">
+                        <h4>
+                            Km da percorrere
+                        </h4>
+                        <input id="input-km" class="rounded text-center" type="text"
+                            placeholder="inserisci i kilometri">
+                    </div>
+                    <div class="col-12 col-md">
+                        <h4>
+                            Fascia d'età
+                        </h4>
+                        <select name="" id="input-age" class="bg-white rounded">
+                            <option value="">Maggiorenne</option>
+                            <option value="">Minorenne</option>
+                        </select>
+                    </div>
+                    <div class="col-12 pt-5">
+                        <button onclick="myFunction()" type="button" class="btn bg-secondary bg-gradient rounded ">
+                            <h5>Ticket</h5>
+                        </button>
+                        <button type="button" class="btn bg-secondary bg-gradient rounded ">
+                            <h5>Annulla</h5>
+                        </button>
+                    </div>
                 </div>
-                <div class="row text-white text-center pt-5">
-                    <h1>
-                        Il prezzo del biglietto è definito in base ai Km(0.21 € al Km)
-                    </h1>
-                    <h2 class="text-info">
-                        Sconti per età
-                    </h2>
-                    <h3>
-                        Per minori di 18: 20%
+
+                <h1 class="text-white text-uppercase text-center fw-bold">
+                    il tuo biglietto
+                </h1>
+                <div class="col-10  p-3 mb-5 bg-white fw-bold">
+                    <h3 class="text-uppercase fw-bold">
+                        dettagli passeggeri
                     </h3>
-                    <h3>
-                        Per gli over 65: 40%
-                    </h3>
-                    <h1>
-                        Il tuo costo del ticket è di:
-                    </h1>
-                    <h2 id="prezzo" class="text-warning">
-                        (per sapere il costo devi premere Ticket)
-                    </h2>
+                    <div class="col-12 d-flex flex-wrap">
+                        <div class="col-12 col-sm-4 bg-secondary p-2">
+                            <h4 class="text-uppercase fw-bold">
+                                nome passeggero
+                            </h4>
+                            <h4 id="user-name"></h4>
+                        </div>
+                        <div class="col-12 col-sm-8 p-3 ms-border d-flex flex-wrap">
+                            <div class="col-12 col-sm-6 col-md-3">
+                                <p class="fw-bold">
+                                    offerta
+                                </p>
+                                <p id="ticket-offer"></p>
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-3">
+                                <p class="fw-bold">
+                                    Carrozza
+                                </p>
+                                <p id="number-carriage"></p>
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-3">
+                                <p class="fw-bold">
+                                    Codice CP
+                                </p>
+                                <p id="cod-cp"></p>
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-3">
+                                <p class="fw-bold">
+                                    Costo biglietto
+                                </p>
+                                <p id="price"></p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-
-
-            </div>
-
         </section>
 
     </main>
-
-
-
-
-
 
     <script type="text/javascript" src="js/main.js"></script>
 </body>

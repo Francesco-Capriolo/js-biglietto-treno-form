@@ -5,6 +5,23 @@ main {
     background-size: cover;
 }
 
-section:first-child div {
+section>div {
+    background-color: rgba(185, 20, 80, 255);
     opacity: .90;
+}
+
+section div h5 {
+    color: rgba(185, 20, 80, 255);
+    font-weight: 400;
+}
+
+input,
+select {
+    border: 1px solid rgba(185, 20, 80, 255);
+    font-weight: 600;
+}
+
+.ms-border {
+    border: 1px solid black;
+    border-right: none;
 }
