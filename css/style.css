@@ -1,0 +1,10 @@
+main {
+    background-image: url(../img/viaggiare-treno.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+section:first-child div {
+    opacity: .90;
+}
