@@ -11,16 +11,23 @@ document.getElementById("button-ticket").addEventListener('click', function myFu
     let bill = (kilometri * 0.27);
 
     if (age == "minor") {
-        console.log(bill - (bill * (17 / 100)));
         bill = (bill - (bill * (17 / 100))).toFixed(2);
-        console.log(bill)
+        console.log(bill);
     } else if (age == "over") {
-        console.log(bill - (bill * (33 / 100)));
         bill = (bill - (bill * (33 / 100))).toFixed(2);
-        console.log(bill)
+        console.log(bill);
     } else {
-        console.log(bill)
+        console.log(bill);
     }
-    document.getElementById("price").innerHTML = (bill) + "€";
 
+    if ((age == "minor") || (age == "over")) {
+        document.getElementById("ticket-offer").innerHTML = "Biglietto scontato";
+    } else {
+        document.getElementById("ticket-offer").innerHTML = "Biglietto Standard";
+    }
+
+    document.getElementById("number-carriage").innerHTML = Math.floor(Math.random() * 10) + 1;
+    document.getElementById("cod-cp").innerHTML = Math.floor(Math.random() * 100000) + 10000;
+    document.getElementById("user-name").innerHTML = nominativo;
+    document.getElementById("price").innerHTML = (bill) + "€";
 });
