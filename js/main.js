@@ -1,28 +1,26 @@
-function myFunction() {
-    let bill = parseInt(prompt("per favore inserisci i kilometri che devi percorrere"));
-    console.log(bill);
+document.getElementById("button-ticket").addEventListener('click', function myFunction() {
+    let name = document.getElementById("input-name");
+    let nominativo = name.value;
+    console.log(nominativo);
 
-    console.log(bill * 0.21);
-    bill = (bill * 0.21);
+    let km = document.getElementById("input-km");
+    let kilometri = parseInt(km.value);
 
-    let age = parseInt(prompt("per favore inserisci la tua età"));
-    console.log(age);
+    let age = document.getElementById("input-age").value;
 
-    if ((isNaN(bill) || (isNaN(age)))) {
-        document.getElementById("prezzo").innerHTML =
-            "Hai scelto un numero non valido";
+    let bill = (kilometri * 0.27);
+
+    if (age == "minor") {
+        console.log(bill - (bill * (17 / 100)));
+        bill = (bill - (bill * (17 / 100))).toFixed(2);
+        console.log(bill)
+    } else if (age == "over") {
+        console.log(bill - (bill * (33 / 100)));
+        bill = (bill - (bill * (33 / 100))).toFixed(2);
+        console.log(bill)
     } else {
-        if (age <= 18) {
-            console.log(bill - (bill * (20 / 100)));
-            bill = (bill - (bill * (20 / 100))).toFixed(2);
-            console.log(bill)
-        } else if (age >= 65) {
-            console.log(bill - (bill * (40 / 100)));
-            bill = (bill - (bill * (40 / 100))).toFixed(2);
-            console.log(bill)
-        } else {
-            console.log(bill)
-        }
-        document.getElementById("prezzo").innerHTML = (bill) + "€";
+        console.log(bill)
     }
-}
+    document.getElementById("price").innerHTML = (bill) + "€";
+
+});
