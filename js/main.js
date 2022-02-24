@@ -8,7 +8,7 @@ document.getElementById("button-ticket").addEventListener('click', function () {
 
     let bill = (kilometri * 0.27);
 
-    if ((isNaN(kilometri)) || !(isNaN(name))) {
+    if ((isNaN(kilometri)) || (/[^a-zA-Z]\S/.test(name))) {
         document.getElementById("user-name").innerHTML = "non sono delle parole";
         document.getElementById("price").innerHTML = "I km non esistono";
     } else {
